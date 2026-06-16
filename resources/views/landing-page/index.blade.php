@@ -1,6 +1,6 @@
 @extends('layouts.app')
 
-@vite(['resources/css/landing-page/index.css'])
+@vite(['resources/css/landing-page/index.css', 'resources/js/landing-page/index.js'])
 
 @section('content')
     <section class="container">
@@ -45,50 +45,78 @@
                     <strong>Booking</strong>
                 </div>
 
-                <ul>
-                    <li><a href="">Home</a></li>
-                    <li><a href="">About Us</a></li>
-                    <li><a href="">Service</a></li>
-                </ul>
-
+                <nav>
+                    @include('landing-page.nav-links')
+                </nav>
                 <ul class="con-auth">
-                    <li>
-                        <button class="btn-header">
-                            <div><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="w-8 h-8" fill="none"
-                                    stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                                    <!-- Lingkaran -->
-                                    <path d="M7 3.8A10 10 0 1 1 7 20.2" />
-
-                                    <!-- Panah masuk -->
-                                    <path d="M2 12h8" />
-                                    <path d="M7 7l5 5-5 5" />
-
-                                    <!-- Kepala user -->
-                                    <circle cx="15" cy="9" r="2.2" fill="currentColor" stroke="none" />
-
-                                    <!-- Badan user -->
-                                    <path
-                                        d="M12.8 14.2c0-.8.6-1.4 1.4-1.4h1.6c2.2 0 4.2.8 4.2 2.6v1.4c0 .8-.6 1.4-1.4 1.4h-5.8c-.8 0-1.4-.6-1.4-1.4v-1.2z"
-                                        fill="currentColor" stroke="none" />
-                                </svg></div>
-                            <span>Sign In</span>
-                        </button>
-                    </li>
-                    <li>
-                        <button class="btn-header">
-                            <div><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="w-8 h-8" fill="none"
-                                    stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                                    <!-- Pintu -->
-                                    <path d="M14 3H6a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h8" />
-
-                                    <!-- Panah masuk -->
-                                    <path d="M10 12h10" />
-                                    <path d="M16 8l4 4-4 4" />
-                                </svg></div>
-                            <span>Login</span>
-                        </button>
-                    </li>
+                    @include('landing-page.btn-auth')
                 </ul>
+
+
+                <div class="hamburger-btn">
+                    <button>
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2.2" stroke-linecap="round">
+                            <line x1="5" y1="7" x2="19" y2="7" />
+                            <line x1="9" y1="12" x2="19" y2="12" />
+                            <line x1="13" y1="17" x2="19" y2="17" />
+                        </svg>
+                    </button>
+                </div>
+
+                <section class="container-sidebar">
+                    <header>
+                        <div>
+                            <button class="ham-close">
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="w-6 h-6" fill="none"
+                                    stroke="currentColor" stroke-width="2">
+                                    <circle cx="12" cy="12" r="9" />
+                                    <path d="M8 8L16 16M16 8L8 16" stroke-linecap="round" />
+                                </svg>
+                            </button>
+                        </div>
+                    </header>
+
+                    <nav class="container-navlink">
+                        @include('landing-page.nav-links')
+                        <span class="adefwsdw">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" fill="none">
+                                <!-- Gedung kiri -->
+                                <rect x="12" y="35" width="20" height="50" rx="2" fill="currentColor" />
+
+                                <!-- Gedung tengah (tertinggi) -->
+                                <rect x="38" y="15" width="24" height="70" rx="2" fill="currentColor" />
+
+                                <!-- Gedung kanan -->
+                                <rect x="68" y="28" width="20" height="57" rx="2" fill="currentColor" />
+
+                                <!-- Jendela gedung kiri -->
+                                <g fill="white">
+                                    <rect x="17" y="42" width="3" height="3" />
+                                    <rect x="24" y="42" width="3" height="3" />
+                                    <rect x="17" y="50" width="3" height="3" />
+                                    <rect x="24" y="50" width="3" height="3" />
+
+                                    <!-- Jendela gedung tengah -->
+                                    <rect x="44" y="24" width="3" height="3" />
+                                    <rect x="53" y="24" width="3" height="3" />
+                                    <rect x="44" y="33" width="3" height="3" />
+                                    <rect x="53" y="33" width="3" height="3" />
+                                    <rect x="44" y="42" width="3" height="3" />
+                                    <rect x="53" y="42" width="3" height="3" />
+
+                                    <!-- Jendela gedung kanan -->
+                                    <rect x="73" y="36" width="3" height="3" />
+                                    <rect x="80" y="36" width="3" height="3" />
+                                    <rect x="73" y="44" width="3" height="3" />
+                                    <rect x="80" y="44" width="3" height="3" />
+                                </g>
+                            </svg>
+                        </span>
+                    </nav>
+
+                    <section class="container-btn-auth"> @include('landing-page.btn-auth')</section>
+                </section>
 
             </header>
 
@@ -97,15 +125,23 @@
 
                 <div class="hero-overlay">
                     <h1>
-                        Temukan tempat acara terbaik, bandingkan penawaran,
-                        dan rasakan acara yang sempurna untuk Anda.
+                        Temukan tempat acara <span class='text-decoration'>terbaik</span>, bandingkan penawaran,
+                        dan <span class='text-decoration'>rasakan acara yang sempurna</span> untuk Anda.
                     </h1>
                 </div>
             </div>
         </section>
 
         <section class="feature-section">
-            <!-- Content -->
+            <div class="location">
+                <section class="con-text"></section>
+                <section class="con-figure">
+                    <div>
+
+                    </div>
+                    <div></div>
+                </section>
+            </div>
         </section>
 
     </section>
