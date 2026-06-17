@@ -21,31 +21,37 @@ class Users extends Seeder
                 'name' => 'Dimas Widy',
                 'email' => 'dimas@gmail.com',
                 'password' => 'dimas123',
+                'role' => 'admin',
             ],
             [
                 'name' => 'Dani tri',
                 'email' => 'dani@gmail.com',
                 'password' => 'dani123',
+                'role' => 'admin',
             ],
             [
                 'name' => 'ridho',
                 'email' => 'ridho@gmail.com',
                 'password' => 'ridho123',
+                'role' => 'admin',
             ],
             [
                 'name' => 'adam',
                 'email' => 'adam@gmail.com',
                 'password' => 'adam123',
+                'role' => 'admin',
             ],
             [
                 'name' => 'yanuar',
                 'email' => 'yanuar@gmail.com',
                 'password' => 'adam123',
+                'role' => 'admin',
             ],
             [
                 'name' => 'danny',
                 'email' => 'danny@gmail.com',
                 'password' => 'danny123',
+                'role' => 'admin',
             ],
         ];
 
@@ -54,6 +60,7 @@ class Users extends Seeder
                 'name' => $user['name'],
                 'email' => $user['email'],
                 'password' => Hash::make($user['password']),
+                'role'     => $user['role'],
             ]);
         }
     }
