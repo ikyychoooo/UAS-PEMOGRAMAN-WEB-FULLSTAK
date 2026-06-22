@@ -110,9 +110,9 @@
     background: transparent;
     color: var(--text-muted);
     border-color: var(--border);
+    font-family: var(--font-primary);
 }
 .btn-ghost:hover {
-    font-family: var(--font-primary);
     color: var(--text);
     border-color: var(--navy);
 }

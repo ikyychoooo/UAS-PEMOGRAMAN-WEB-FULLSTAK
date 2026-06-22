@@ -10,7 +10,7 @@
 @vite(['resources/css/layouts/index.css'])
 
 <body>
-    <main>
+    <main class="container-main">
         @yield('content')
     </main>
 </body>

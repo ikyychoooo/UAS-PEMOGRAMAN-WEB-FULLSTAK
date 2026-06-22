@@ -19,12 +19,11 @@ Route::prefix('/user')->group(function(){
 Route::prefix('admin')->group(function () {
     // Menampilkan halaman login
     Route::get('/login', [AdminAuth::class, 'showLoginForm'])->name('admin.login');
-
     // Memproses form login
     Route::post('/login', [AdminAuth::class, 'login'])->name('admin.login.submit');
 
     // dashboard
-    Route::get('/dashboard', [Admin::class, 'index'])->name('index');
+    Route::get('/dashboard', [Admin::class, 'index'])->name('dashboard-index');
 
     // facilities
     Route::get('/facilities',[AdminFacilities::class,'index'])->name('facility-index');

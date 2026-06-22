@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
-
+@include('components.navigasi-admin.index')
 <h1>Daftar Fasilitas Ruangan</h1>
 
 <a href="{{ route('facility-create') }}">

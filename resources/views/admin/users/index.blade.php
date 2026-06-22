@@ -1,6 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
+@include('components.navigasi-admin.index')
     <h1>Daftar User</h1>
 
     <a href="{{ route('user-create-form') }}">
