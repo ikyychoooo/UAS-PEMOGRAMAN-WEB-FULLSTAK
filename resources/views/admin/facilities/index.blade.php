@@ -2,19 +2,19 @@
 
 @section('content')
 @include('components.navigasi-admin.index')
-<h1>Daftar Fasilitas Ruangan</h1>
-
-<a href="{{ route('facility-create') }}">
-    Tambah Fasilitas
-</a>
-
-<br><br>
-
-@if (session('success'))
-    <p>{{ session('success') }}</p>
-@endif
 
 <section class="main-container">
+    <h1>Daftar Fasilitas Ruangan</h1>
+
+    <a href="{{ route('facility-create') }}">
+        Tambah Fasilitas
+    </a>
+
+    <br><br>
+
+    @if (session('success'))
+        <p>{{ session('success') }}</p>
+    @endif
     <table border="1" cellpadding="8" cellspacing="0">
     <thead>
         <tr>

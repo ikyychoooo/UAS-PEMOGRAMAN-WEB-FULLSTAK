@@ -12,7 +12,7 @@
 </a>
 </section>
 
-<style>
+{{-- <style>
     .container-btn-logout{
         width: 100%;
         bottom: 0;
@@ -52,4 +52,4 @@
         font-weight: 900;
         color: var(--danger);
     }
-</style>
+</style> --}}
