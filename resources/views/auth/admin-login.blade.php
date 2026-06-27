@@ -1,50 +1,100 @@
 @extends('layouts.app')
 
+@vite(['resources/css/landing-page/index.css', 'resources/css/auth/admin-login.css'])
+
 @section('content')
+    <section class="main-container">
 
-<h1>Admin Panel</h1>
+        <section class="login-wrapper">
+            <div class="login-card">
 
-<form action="{{ route('admin.login.submit') }}" method="POST">
-    @csrf
+                <div class="login-header">
+                    <h1 class="login-title">Masuk</h1>
+                    <div class="title-line"></div>
+                    <p class="login-subtitle">
+                        Selamat datang dilogin page admin
+                    </p>
+                </div>
 
-    <div>
-        <label for="email">Email</label>
-        <input
-            type="email"
-            id="email"
-            name="email"
+                <form class="login-form" action="{{ route('admin.login.submit') }}" method="POST">
+                    @csrf
 
-            placeholder="admin@gmail.com"
-        >
-        @error('email')
-            <span>{{ $message }}</span>
-        @enderror
-    </div>
+                    <div class="form-group">
+                        <label class="form-label" for="email">
+                            EMAIL
+                        </label>
+                        <div class="input-wrapper">
+                            <input type="email" id="email" name="email"
+                                class="form-input @error('email') is-invalid @enderror" placeholder="Masukkan email Anda"
+                                value="{{ old('email') }}" required>
+                        </div>
+                        @error('email')
+                            <span class="form-error">
+                                {{ $message }}
+                            </span>
+                        @enderror
+                    </div>
 
-    <div>
-        <label for="password">Password</label>
-        <input
-            type="password"
-            id="password"
-            name="password"
-            placeholder="Masukan Password anda"
-        >
-        @error('password')
-            <span>{{ $message }}</span>
-        @enderror
-    </div>
+                    <div class="form-group">
+                        <label class="form-label" for="password">
+                            PASSWORD
+                        </label>
+                        <div class="input-wrapper">
+                            <input type="password" class="form-input @error('password') is-invalid @enderror" id="password"
+                                name="password" placeholder="Masukkan password Anda" required>
+                            <i class="bi bi-eye-slash right-icon" id="togglePassword">
+                            </i>
+                        </div>
+                        @error('password')
+                            <span class="form-error">
+                                {{ $message }}
+                            </span>
+                        @enderror
+                    </div>
 
+                    <div class="remember-wrapper">
+                        <label class="remember-label">
+                            <input type="checkbox" name="remember" class="remember-checkbox">
+                            <span>Ingat saya</span>
+                        </label>
+                    </div>
 
-    <button type="submit">Masuk</button>
+                    <div class="form-actions">
+                        <button type="submit" class="btn-primary">
+                            Masuk
+                        </button>
+                        <a href="{{ route('landing-page') }}" class="btn-secondary">
+                            <i class="bi bi-chevron-left"></i> Kembali
+                        </a>
+                    </div>
 
-</form>
+                </form>
 
-@if ($errors->any())
-    <ul>
-        @foreach ($errors->all() as $error)
-            <li>{{ $error }}</li>
-        @endforeach
-    </ul>
-@endif
+                {{-- <div class="login-footer">
+            <p class="footer-text">
+                Belum punya akun?
+                <a href="{{ route('signup-page') }}" class="signup-link">
+                    Daftar di sini
+                </a>
+            </p>
+        </div> --}}
 
+            </div>
+        </section>
+
+    </section>
+    <script>
+        const togglePassword = document.getElementById('togglePassword');
+        const password = document.getElementById('password');
+
+        togglePassword.addEventListener('click', function() {
+            // Toggle attribute type
+            const type = password.getAttribute('type') === 'password' ? 'text' : 'password';
+            password.setAttribute('type', type);
+
+            // Toggle icon classes
+            this.classList.toggle('bi-eye');
+            this.classList.toggle('bi-eye-slash');
+        });
+    </script>
 @endsection

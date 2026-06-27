@@ -12,38 +12,44 @@
 </a>
 </section>
 
-<style>
+{{-- <style>
     .container-btn-logout{
         width: 100%;
-        position: absolute;
         bottom: 0;
         background-color:var(--base);
         border-top:1px solid var(--border);
-        padding: 3rem 0 0 0;
+        padding: 1rem 0 0 0;
         display: flex;
         justify-content: center;
         align-items: center;
+        margin-top:0.5rem;
     }
     .btn-logout {
-        width: 90%;
-        /* background-color: rgb(169, 12, 12); */
+        width: max-content;
+        padding: 0 1rem 0 0;
         margin-bottom: 1rem;
         display: flex;
         align-items: center;
         justify-content: start;
+        border: 1px solid transparent;
+        border-radius: 5px;
+    }
+
+    .btn-logout:hover{
+        border: 1px solid var(--border);
     }
 
     .btn-logout span:nth-child(1) {
         display: inline-flex;
         height: 3rem;
         aspect-ratio: 1/1;
-        color: var(--text);
-        padding:10px;
+        color: var(--danger);
+        padding:12px;
     }
 
     .btn-logout span:nth-child(2) {
         font-family: var(--font-primary);
         font-weight: 900;
-        color: var(--text);
+        color: var(--danger);
     }
-</style>
+</style> --}}

@@ -5,16 +5,18 @@ namespace App\Http\Middleware;
 use Closure;
 use Illuminate\Http\Request;
 use Symfony\Component\HttpFoundation\Response;
+use Illuminate\Support\Facades\Auth;
 
 class CheckUser
 {
-    /**
-     * Handle an incoming request.
-     *
-     * @param  Closure(Request): (Response)  $next
-     */
-    public function handle(Request $request, Closure $next): Response
+    public function handle(Request $request, Closure $next)
     {
-        return $next($request);
+        // Kalau belum login ATAU bukan admin → tolak
+        if (!Auth::check() || Auth::user()->role !== 'customer') {
+            return redirect()->route('login-page')
+                ->withErrors(['email' => 'Silakan login dahulu.']);
+        }
+
+        return $next($request); // Lanjutkan request ke controller
     }
 }

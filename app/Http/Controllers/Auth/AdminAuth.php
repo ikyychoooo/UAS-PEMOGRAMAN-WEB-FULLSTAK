@@ -58,6 +58,32 @@ class AdminAuth extends Controller
 
     }
 
+    // public function showProfile()
+    // {
+    //     // Mengecek apakah ada user yang sedang login
+    //     if (Auth::check()) {
+
+    //         // Mengambil seluruh data object user yang sedang login
+    //         $user = Auth::user();
+
+    //         // Mengambil data spesifik (sesuaikan dengan nama kolom di database kamu)
+    //         $username = $user->name; // Bisa juga $user->name atau $user->email
+    //         $useremail = $user->email; // Bisa juga $user->name atau $user->email
+
+    //         // Ini akan mengembalikan STRING HASH, bukan password asli yang diketik user
+
+
+    //         return response()->json([
+    //             'pesan' => 'User sedang login',
+    //             'username' => $username,
+
+    //         ]);
+
+    //     }
+
+    //     return response()->json(['pesan' => 'Tidak ada user yang login'], 401);
+    // }
+
     // Logout admin
     public function logoutAdmin(Request $request)
     {

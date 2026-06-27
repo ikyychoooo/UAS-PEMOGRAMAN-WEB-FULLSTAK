@@ -11,16 +11,11 @@ return Application::configure(basePath: dirname(__DIR__))
         $middleware->alias([
             // Tambahkan baris ini
             'CheckAdmin' => \App\Http\Middleware\CheckAdmin::class,
+            'CheckUser' => \App\Http\Middleware\CheckUser::class,
         ]);
         $middleware->redirectGuestsTo(function ($request) {
-        // Jika URL yang diakses mengandung kata 'admin'
-        if ($request->is('admin') || $request->is('admin/*')) {
-            return route('admin.login'); // Alihkan ke login admin
-        }
-
-        // Jika bukan admin, alihkan ke login user biasa
-        return route('login-page');
-    });
+            return $request->is('admin*') ? route('admin.login') : route('login-page');
+        });
     })
     ->withExceptions(function (Exceptions $exceptions) {
         //

@@ -10,7 +10,7 @@
             <p class="signup-subtitle">Selamat datang kembali</p>
         </div>
 
-        <form class="signup-form" method="POST" action="{{ route('login-page') }}">
+        <form class="signup-form" method="POST" action="{{ route('user-login-submit') }}">
             @csrf
 
             @if ($errors->any())

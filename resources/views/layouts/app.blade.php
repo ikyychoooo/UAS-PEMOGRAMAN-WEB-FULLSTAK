@@ -7,8 +7,8 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Booking</title>
 
-    @vite(['resources/css/layouts/index.css'])
-</head>
+
+@vite(['resources/css/layouts/index.css'])
 
 <body>
     <main>

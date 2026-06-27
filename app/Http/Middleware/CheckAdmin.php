@@ -13,7 +13,7 @@ class CheckAdmin
     {
         // Kalau belum login ATAU bukan admin → tolak
         if (!Auth::check() || Auth::user()->role !== 'admin') {
-            return redirect()->route('admin.login')
+            return redirect()->route('signup-page')
                 ->withErrors(['email' => 'Silakan login sebagai admin.']);
         }
 

@@ -2,17 +2,32 @@
 
 <header class="header">
     <div class="container-profil">
-        <figure></figure>
+        <figure>
+            <div class="container-profil-kosong">
+                    <span>
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="1" stroke-linecap="round" stroke-linejoin="round">
+                            <circle cx="12" cy="8" r="4" />
+                            <path d="M4 20c0-4 3.6-7 8-7s8 3 8 7" />
+                        </svg>
+                    </span>
+                </div>
+        </figure>
         <span>
-            <p>Admin</p>
-            <p>example@gmail.com</p>
+        @if(Auth::check())
+            <a href="" >{{ Auth::user()->name }}</a>
+            <p>{{ Auth::user()->email }}</p>
+        @else
+            <a href="">Guest</a>
+            <p>Silakan login</p>
+        @endif
         </span>
     </div>
     <div class="container-hamburger">
         <svg viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <rect x="4" y="7" width="24" height="3" rx="1.5" fill="currentColor" />
-            <rect x="4" y="14.5" width="24" height="3" rx="1.5" fill="currentColor" />
-            <rect x="4" y="22" width="24" height="3" rx="1.5" fill="currentColor" />
+            <rect x="4" y="7" width="24" height="2" rx="1.5" fill="currentColor" />
+            <rect x="4" y="14.5" width="24" height="2" rx="1.5" fill="currentColor" />
+            <rect x="4" y="22" width="24" height="2" rx="1.5" fill="currentColor" />
         </svg>
     </div>
 
@@ -23,9 +38,9 @@
             <div class="btn-close">
                 <svg viewBox="0 0 24 24" fill="none">
                     <line x1="5" y1="5" x2="19" y2="19" stroke="currentColor"
-                        stroke-width="2.5" stroke-linecap="round" />
+                        stroke-width="1.4" stroke-linecap="round" />
                     <line x1="19" y1="5" x2="5" y2="19" stroke="currentColor"
-                        stroke-width="2.5" stroke-linecap="round" />
+                        stroke-width="1.4" stroke-linecap="round" />
                 </svg>
             </div>
         </header>

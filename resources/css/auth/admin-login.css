@@ -1,0 +1,236 @@
+/* WRAPPER & CARD */
+.login-wrapper {
+    /* min-height: 100vh; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* background: #f7f9fa; */
+    font-family: var(--font-primary);
+}
+
+.login-card {
+    width: 420px;
+    background: #ffffff;
+    border-radius: 16px;
+    padding: 40px 35px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.05);
+    animation: fadeUp 0.6s ease;
+    box-sizing: border-box;
+}
+
+@keyframes fadeUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* HEADER */
+.login-header {
+    text-align: left;
+    margin-bottom: 30px;
+}
+
+.login-title {
+    font-size: 32px;
+    font-weight: 800;
+    color: var(--secondary);
+    margin-bottom: 5px;
+    margin-top: 0;
+}
+
+/* Garis Hijau di bawah Judul */
+.title-line {
+    width: 35px;
+    height: 4px;
+    background-color: var(--accent);
+    border-radius: 2px;
+    margin-bottom: 12px;
+}
+
+.login-subtitle {
+    color: #999;
+    font-size: 15px;
+    font-family: var(--font-secondary);
+    margin: 0;
+}
+
+/* FORM */
+.login-form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+}
+
+.form-label {
+    margin-bottom: 8px;
+    font-weight: 700;
+    font-size: 13px;
+    color: var(--secondary);
+    letter-spacing: 0.5px;
+}
+
+.input-wrapper {
+    position: relative;
+    width: 100%;
+}
+
+.form-input {
+    width: 100%;
+    height: 50px;
+    padding-left: 16px;
+    padding-right: 45px; /* space untuk icon mata */
+    background-color: var(--base);
+    border: 1px solid transparent;
+    border-radius: 10px;
+    font-size: 15px;
+    font-family: var(--font-secondary);
+    color: var(--text);
+    outline: none;
+    box-sizing: border-box;
+    transition: 0.3s ease;
+}
+
+.form-input::placeholder {
+    color: #a3a3a3;
+}
+
+.form-input:focus {
+    border-color: var(--border);
+    background-color: #ffffff;
+}
+
+.form-input.is-invalid {
+    border-color: var(--danger);
+    background-color: #fff5f5;
+}
+
+/* ICON MATA (PASSWORD) */
+.right-icon {
+    position: absolute;
+    right: 15px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #888;
+    font-size: 18px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.right-icon:hover {
+    color: var(--secondary);
+}
+
+/* ERROR MESSAGE */
+.form-error {
+    margin-top: 6px;
+    color: var(--danger);
+    font-size: 13px;
+    font-weight: 500;
+}
+
+/* REMEMBER ME */
+.remember-wrapper {
+    margin-top: -5px;
+}
+
+.remember-label {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    cursor: pointer;
+    color: var(--text);
+    font-size: 14px;
+    font-family: var(--font-secondary);
+}
+
+.remember-checkbox {
+    width: 18px;
+    height: 18px;
+    cursor: pointer;
+    accent-color: var(--secondary);
+    border-radius: 4px;
+}
+
+/* BUTTONS */
+.form-actions {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    margin-top: 10px;
+}
+
+.btn-primary {
+    width: 100%;
+    height: 50px;
+    border: none;
+    border-radius: 10px;
+    background: var(--secondary);
+    color: #ffffff;
+    font-size: 16px;
+    font-weight: 700;
+    cursor: pointer;
+    font-family: var(--font-primary);
+    transition: 0.3s;
+}
+
+.btn-primary:hover {
+    background: #142845;
+}
+
+.btn-secondary {
+    width: 100%;
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+    border: 1px solid var(--secondary);
+    border-radius: 10px;
+    color: var(--secondary);
+    background: transparent;
+    font-size: 15px;
+    font-weight: 600;
+    text-decoration: none;
+    font-family: var(--font-primary);
+    box-sizing: border-box;
+    transition: 0.3s;
+}
+
+.btn-secondary:hover {
+    background: var(--base);
+}
+
+/* FOOTER */
+.login-footer {
+    text-align: center;
+    margin-top: 35px;
+}
+
+.footer-text {
+    color: #666;
+    font-size: 14px;
+    font-family: var(--font-secondary);
+    margin: 0;
+}
+
+.signup-link {
+    color: var(--accent);
+    font-weight: 700;
+    text-decoration: none;
+    transition: 0.3s;
+}
+
+.signup-link:hover {
+    text-decoration: underline;
+    opacity: 0.8;
+}
