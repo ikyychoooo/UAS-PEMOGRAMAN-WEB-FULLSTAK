@@ -1,0 +1,151 @@
+/* resources/css/user/booking/index.css */
+
+/* ─── Page Layout ─────────────────────────────────────────── */
+.room-page {
+    min-height: 100vh;
+    background-color: var(--base);
+    padding: 2rem 1.5rem 4rem;
+}
+
+.container-rooms {
+    max-width: 1100px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 1.5rem;
+    padding: 10rem 2rem 3rem 2rem;
+}
+
+/* ─── Card ────────────────────────────────────────────────── */
+.container-room {
+    background: #ffffff;
+    border-radius: 16px;
+    overflow: hidden;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.07);
+    display: flex;
+    flex-direction: column;
+    transition:
+        transform 0.2s ease,
+        box-shadow 0.2s ease;
+}
+
+.container-room:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.11);
+}
+
+/* ─── Image ───────────────────────────────────────────────── */
+.container-image {
+    margin: 0;
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    overflow: hidden;
+    background-color: var(--background);
+    padding: 0.5rem;
+    background-color: var(--base);
+}
+
+.container-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    transition: transform 0.35s ease;
+    border-radius: 10px;
+}
+
+.container-room:hover .container-image img {
+    transform: scale(1.04);
+}
+
+/* ─── Content ─────────────────────────────────────────────── */
+.container-desc {
+    padding: 1.25rem 1.25rem 0.75rem;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 0.4rem;
+}
+
+.container-desc h2 {
+    font-family: var(--font-primary), sans-serif;
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: var(--secondary);
+    margin: 0;
+    line-height: 1.3;
+}
+
+.container-desc .capacity {
+    font-family: var(--font-secondary), sans-serif;
+    font-size: 0.78rem;
+    font-weight: 500;
+    color: var(--accent);
+    letter-spacing: 0.01em;
+    display: flex;
+    align-items: end;
+    gap: 0.3rem;
+}
+
+.nnaowm {
+    display: inline-flex;
+    height: 2rem;
+    aspect-ratio: 1/1;
+}
+
+.container-desc p {
+    font-family: var(--font-secondary), sans-serif;
+    font-size: 0.85rem;
+    color: var(--text);
+    opacity: 0.75;
+    line-height: 1.6;
+    margin: 0;
+}
+
+/* ─── Location badge ──────────────────────────────────────── */
+
+/* ─── CTA Button ──────────────────────────────────────────── */
+.btn-booking {
+    display: block;
+    margin: 0.75rem 1.25rem 1.25rem;
+    padding: 0.65rem 1rem;
+    background-color: var(--secondary);
+    color: #ffffff;
+    font-family: var(--font-primary), sans-serif;
+    font-size: 0.875rem;
+    font-weight: 600;
+    text-align: center;
+    border-radius: 10px;
+    text-decoration: none;
+    transition:
+        background-color 0.2s ease,
+        opacity 0.2s ease;
+    letter-spacing: 0.02em;
+}
+
+.btn-booking:hover {
+    background-color: var(--accent);
+    opacity: 1;
+}
+
+/* ─── Empty state ─────────────────────────────────────────── */
+.container-rooms > h1 {
+    font-family: var(--font-primary), sans-serif;
+    font-size: 1.1rem;
+    color: var(--text);
+    opacity: 0.5;
+    text-align: center;
+    grid-column: 1 / -1;
+    padding: 4rem 0;
+}
+
+/* ─── Responsive ──────────────────────────────────────────── */
+@media (max-width: 640px) {
+    .container-rooms {
+        grid-template-columns: 1fr;
+    }
+
+    .room-page {
+        padding: 1rem 1rem 3rem;
+    }
+}

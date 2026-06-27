@@ -1,0 +1,337 @@
+/* =============================================
+   navigasi-admin.css
+   Referensi desain: card form dengan background
+   teal (#bbd5da), card putih, accent emerald (#10b981)
+   ============================================= */
+
+/* ---------- Header / Top Bar ---------- */
+.header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 100;
+    height: 64px;
+    background-color: var(--secondary);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 1.5rem;
+    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.18);
+}
+
+/* ---------- Profil ---------- */
+.container-profil {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+}
+
+.container-profil figure {
+    margin: 0;
+}
+
+.container-profil-kosong {
+    width: 2.4rem;
+    height: 2.4rem;
+    border-radius: 50%;
+    background-color: rgba(255, 255, 255, 0.12);
+    border: 1.5px solid rgba(255, 255, 255, 0.25);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #ffffff;
+}
+
+.container-profil-kosong svg {
+    width: 1.2rem;
+    height: 1.2rem;
+}
+
+.container-profil > span {
+    display: flex;
+    flex-direction: column;
+    gap: 0.1rem;
+}
+
+.container-profil > span a {
+    font-family: var(--font-primary);
+    font-weight: 700;
+    font-size: 0.875rem;
+    color: #ffffff;
+    text-decoration: none;
+    line-height: 1.2;
+    letter-spacing: 0.01em;
+}
+
+.container-profil > span a:hover {
+    color: var(--accent);
+}
+
+.container-profil > span p {
+    font-family: var(--font-primary);
+    font-size: 0.72rem;
+    color: rgba(255, 255, 255, 0.55);
+    margin: 0;
+    line-height: 1.2;
+}
+
+/* ---------- Hamburger ---------- */
+.container-hamburger {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 2.4rem;
+    height: 2.4rem;
+    cursor: pointer;
+    border-radius: 6px;
+    border: 1.5px solid rgba(255, 255, 255, 0.2);
+    color: #ffffff;
+    transition:
+        background-color 0.18s,
+        border-color 0.18s;
+}
+
+.container-hamburger:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+    border-color: var(--accent);
+    color: var(--accent);
+}
+
+.container-hamburger svg {
+    width: 1.2rem;
+    height: 1.2rem;
+}
+
+/* ---------- Overlay blur ---------- */
+.bg-blur {
+    display: none;
+    position: fixed;
+    inset: 0;
+    z-index: 99;
+    background-color: rgba(0, 0, 0, 0.35);
+    backdrop-filter: blur(2px);
+    -webkit-backdrop-filter: blur(2px);
+    transition: opacity 0.25s;
+}
+
+.bg-blur.active {
+    display: block;
+}
+
+/* ---------- Sidebar ---------- */
+.container-sidebar {
+    position: fixed;
+    top: 0;
+    right: 0;
+    z-index: 200;
+    width: 270px;
+    height: 100dvh;
+    background-color: #ffffff;
+    display: flex;
+    flex-direction: column;
+    box-shadow: -4px 0 24px rgba(0, 0, 0, 0.12);
+    transform: translateX(110%);
+    transition: transform 0.28s cubic-bezier(0.4, 0, 0.2, 1);
+    border-left: 4px solid var(--secondary);
+}
+
+.container-sidebar.active {
+    transform: translateX(0);
+}
+
+/* ---------- Sidebar header (tombol close) ---------- */
+.container-sidebar > header {
+    height: 64px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    padding: 0 1.25rem;
+    border-bottom: 1px solid var(--border);
+    flex-shrink: 0;
+}
+
+.btn-close {
+    width: 2rem;
+    height: 2rem;
+    border-radius: 6px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    color: var(--text);
+    border: 1px solid transparent;
+    transition:
+        border-color 0.15s,
+        color 0.15s,
+        background-color 0.15s;
+}
+
+.btn-close:hover {
+    background-color: var(--base);
+    border-color: var(--border);
+    color: var(--danger);
+}
+
+.btn-close svg {
+    width: 1rem;
+    height: 1rem;
+}
+
+/* ---------- Nav links ---------- */
+.container-navlink {
+    flex: 1;
+    overflow-y: auto;
+    padding: 1rem 0.75rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+}
+
+/* Sembunyikan scroll bar tapi tetap bisa scroll */
+.container-navlink::-webkit-scrollbar {
+    width: 4px;
+}
+.container-navlink::-webkit-scrollbar-track {
+    background: transparent;
+}
+.container-navlink::-webkit-scrollbar-thumb {
+    background-color: var(--border);
+    border-radius: 99px;
+}
+
+.container-navlink a {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    padding: 0.65rem 0.9rem;
+    border-radius: 8px;
+    border: 1px solid transparent;
+    text-decoration: none;
+    color: var(--text);
+    font-family: var(--font-primary);
+    font-size: 0.875rem;
+    font-weight: 500;
+    transition:
+        background-color 0.15s,
+        border-color 0.15s,
+        color 0.15s;
+    position: relative;
+}
+
+/* Label eyebrow kecil */
+.container-navlink a span:nth-child(2) {
+    letter-spacing: 0.01em;
+}
+
+/* Icon wrapper */
+.container-navlink a .icon {
+    width: 2rem;
+    height: 2rem;
+    border-radius: 6px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--base);
+    color: var(--text);
+    flex-shrink: 0;
+    transition:
+        background-color 0.15s,
+        color 0.15s;
+}
+
+.container-navlink a .icon svg {
+    width: 1rem;
+    height: 1rem;
+}
+
+/* Hover state */
+.container-navlink a:hover {
+    background-color: #f0fdf9;
+    border-color: rgba(16, 185, 129, 0.2);
+    color: var(--accent);
+}
+
+.container-navlink a:hover .icon {
+    background-color: rgba(16, 185, 129, 0.12);
+    color: var(--accent);
+}
+
+/* Active state — mengacu border-left hijau pada card form */
+.container-navlink a.active {
+    background-color: #f0fdf9;
+    border-color: rgba(16, 185, 129, 0.25);
+    color: var(--accent);
+    font-weight: 700;
+}
+
+.container-navlink a.active .icon {
+    background-color: rgba(16, 185, 129, 0.15);
+    color: var(--accent);
+}
+
+/* Indicator bar kiri pada item aktif */
+.container-navlink a.active::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 3px;
+    height: 60%;
+    border-radius: 99px;
+    background-color: var(--accent);
+}
+
+/* ---------- Logout (dari komponen btn-logout) ---------- */
+.container-btn-logout {
+    width: 100%;
+    background-color: var(--base);
+    border-top: 1px solid var(--border);
+    padding: 1rem 0 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 0.5rem;
+    flex-shrink: 0;
+}
+
+.btn-logout {
+    width: max-content;
+    padding: 0 1rem 0 0;
+    margin-bottom: 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    border: 1px solid transparent;
+    border-radius: 6px;
+    text-decoration: none;
+    transition:
+        border-color 0.15s,
+        background-color 0.15s;
+}
+
+.btn-logout:hover {
+    border-color: var(--border);
+    background-color: rgba(188, 0, 0, 0.05);
+}
+
+.btn-logout span:nth-child(1) {
+    display: inline-flex;
+    height: 2.75rem;
+    aspect-ratio: 1 / 1;
+    color: var(--danger);
+    padding: 11px;
+}
+
+.btn-logout span:nth-child(1) svg {
+    width: 100%;
+    height: 100%;
+}
+
+.btn-logout span:nth-child(2) {
+    font-family: var(--font-primary);
+    font-weight: 700;
+    font-size: 0.875rem;
+    color: var(--danger);
+}

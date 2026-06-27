@@ -1,20 +1,21 @@
 @extends('layouts.app')
 
 @section('content')
+@include('components.navigasi-admin.index')
 
-<h1>Daftar Fasilitas Ruangan</h1>
+<section class="main-container">
+    <h1>Daftar Fasilitas Ruangan</h1>
 
-<a href="{{ route('facility-create') }}">
-    Tambah Fasilitas
-</a>
+    <a href="{{ route('facility-create') }}">
+        Tambah Fasilitas
+    </a>
 
-<br><br>
+    <br><br>
 
-@if (session('success'))
-    <p>{{ session('success') }}</p>
-@endif
-
-<table border="1" cellpadding="8" cellspacing="0">
+    @if (session('success'))
+        <p>{{ session('success') }}</p>
+    @endif
+    <table border="1" cellpadding="8" cellspacing="0">
     <thead>
         <tr>
             <th>ID</th>
@@ -75,5 +76,6 @@
         @endforelse
     </tbody>
 </table>
+</section>
 
 @endsection

@@ -1,5 +1,4 @@
 <ul>
-    <li><a href="">Home</a></li>
-    <li><a href="">About Us</a></li>
-    <li><a href="">Service</a></li>
+    <li><a href="#">Home</a></li>
+    <li><a href="#venues">Service</a></li>
 </ul>

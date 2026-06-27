@@ -1,0 +1,152 @@
+.btn-kembali {
+    position: absolute;
+    margin: 2%;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.8rem;
+
+    text-decoration: none;
+
+    color: var(--secondary);
+
+    font-family: var(--font-secondary);
+    font-weight: 600;
+
+    margin-bottom: 2rem;
+
+    transition: 0.2s;
+    top: 0;
+}
+
+.btn-kembali:hover {
+    color: var(--accent);
+}
+
+.btn-kembali svg {
+    width: 20px;
+}
+
+/* CARD */
+
+.container-profil {
+    max-width: 600px;
+
+    margin: auto;
+
+    background: white;
+
+    border-radius: 32px;
+
+    padding: 3rem;
+
+    /* box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08); */
+
+    display: flex;
+    flex-direction: column;
+
+    align-items: center;
+
+    gap: 3rem;
+}
+
+/* AVATAR */
+
+.container-profil figure {
+    margin: 0;
+}
+
+.container-profil-kosong {
+    width: 160px;
+    aspect-ratio: 1;
+
+    border-radius: 50%;
+
+    background: var(--secondary);
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.container-profil-kosong svg {
+    width: 80px;
+
+    color: white;
+}
+
+/* INFORMATION */
+
+.container-profil > div {
+    width: 100%;
+
+    display: flex;
+    flex-direction: column;
+
+    gap: 1.5rem;
+}
+
+.container-profil > div > span {
+    display: flex;
+    align-items: center;
+
+    gap: 1rem;
+
+    padding: 1.25rem;
+
+    border: 1px solid var(--border);
+
+    border-radius: 20px;
+
+    background: #fafafa;
+
+    color: var(--text);
+
+    font-family: var(--font-secondary);
+
+    transition: 0.2s;
+}
+
+.container-profil > div > span:hover {
+    border-color: var(--secondary);
+}
+
+/* ICON */
+
+.kndoaod,
+.hoadjaojdo {
+    width: 48px;
+    aspect-ratio: 1;
+
+    border-radius: 14px;
+
+    background: var(--secondary);
+
+    color: white;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    flex-shrink: 0;
+}
+
+.kndoaod svg,
+.hoadjaojdo svg {
+    width: 22px;
+}
+
+/* RESPONSIVE */
+
+@media (max-width: 768px) {
+    .container-profil {
+        padding: 2rem;
+    }
+
+    .container-profil-kosong {
+        width: 120px;
+    }
+
+    .container-profil-kosong svg {
+        width: 60px;
+    }
+}

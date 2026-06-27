@@ -92,25 +92,6 @@
 
         <i class="bi bi-lock-fill left-icon"></i>
 
-        <input
-            type="password"
-            id="password_confirmation"
-            name="password_confirmation"
-            class="form-input"
-            placeholder="Password Anda">
-
-        <i
-           class="bi bi-eye-slash-fill right-icon"
-           id="toggleConfirmPassword">
-        </i>
-
-    </div>
-
-        @error('password_confirmation')
-            <span class="form-error">
-                {{ $message }}
-            </span>
-        @enderror
 
 </div>
 
