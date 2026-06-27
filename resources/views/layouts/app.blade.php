@@ -6,13 +6,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Booking</title>
-    
-    {{-- CSS Bawaan Layout --}}
-    @vite(['resources/css/layouts/index.css'])
-    
-    {{-- PINTU MASUK: Tempat menyuntikkan CSS kustom halaman tambah user --}}
-    @yield('styles')
+
+    <link
+rel="stylesheet"
+href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
 </head>
+@vite(['resources/css/layouts/index.css'])
 
 <body>
     <main>
